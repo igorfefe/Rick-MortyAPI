@@ -13,6 +13,7 @@ function getCharacters() {
         }
     })
 };
-
+getCharacters();
 console.log(getCharacters());
+
 
