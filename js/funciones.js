@@ -5,8 +5,16 @@ function getCharacters() {
         dataType: "json",
         contentType: 'application/x-www-form-urlencoded',
         success: function (data) {
+            // Guardar en variables los personajes
             var charactersArray = data;
-            console.log(charactersArray);
+            var characterBeebo = charactersArray[2];
+            
+            // Pintar
+            var beeboBox = document.querySelector("#beebo-box");
+            beeboBox.innerHTML = characterBeebo.name;
+            console.log(characterBeebo.image);
+
+
         },
         error: function (error) {
             console.log(error);
@@ -14,6 +22,5 @@ function getCharacters() {
     })
 };
 getCharacters();
-console.log(getCharacters());
 
 
