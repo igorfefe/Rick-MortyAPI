@@ -1,3 +1,5 @@
+var datos;
+
 function getCharacters() {
     $.ajax({
         url: "https://rickandmortyapi.com/api/character/5,76,33,23,45,56",
@@ -5,8 +7,10 @@ function getCharacters() {
         dataType: "json",
         contentType: 'application/x-www-form-urlencoded',
         success: function (data) {
-            var charactersArray = data;
-            console.log(charactersArray);
+            var characters = data;
+            var f1 = document.querySelector('#f1');
+
+            f1.src = characters[2].image;
         },
         error: function (error) {
             console.log(error);
@@ -14,6 +18,6 @@ function getCharacters() {
     })
 };
 getCharacters();
-console.log(getCharacters());
 
+console.log(datos);
 
