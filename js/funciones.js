@@ -1,4 +1,3 @@
-function getCharacters() {
     $.ajax({
         url: "https://rickandmortyapi.com/api/character/5,76,33,23,45,56",
         method: "GET",
@@ -12,6 +11,9 @@ function getCharacters() {
             // Pintar
             var beeboBox = document.querySelector("#beebo-box");
             beeboBox.innerHTML = characterBeebo.name;
+            var img = document.createElement("img");
+            beeboBox.appendChild(img);
+            img.src = characterBeebo.image;
             console.log(characterBeebo.image);
 
 
@@ -19,8 +21,6 @@ function getCharacters() {
         error: function (error) {
             console.log(error);
         }
-    })
-};
-getCharacters();
+    });
 
 
